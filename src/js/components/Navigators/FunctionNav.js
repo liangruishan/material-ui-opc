@@ -59,15 +59,16 @@ var FunctionNav = React.createClass({
     var items = [];
     this.props.nav.menus.map((nv)=>{
       items.push(
-        <ul key={"function_nav_"+nv.id}>
+        <div key={"function_nav_"+nv.id}>
           <LinkNav nav={nv} />
-        </ul>
+        <hr />
+      </div>
       );
     });
     return (
       <div>
         <FlatButton
-          style={this.mergeAndPrefix(this.props.menuStyle,{width: '100%', backgroundColor:'#00FFFF', fontSize: '20px'})}
+          style={this.mergeAndPrefix(this.props.menuStyle,{width: '100%', backgroundColor:'#7A6766', fontSize: '20px'})}
           secondary={true}
           label={this.props.nav.name}
           onTouchTap={this._toggle} />
