@@ -3,9 +3,10 @@
 let React = require('react');
 let ModuleNav = require('./ModuleNav');
 let mergeAndPrefix = require('material-ui/lib/utils/styles');
-let { Menu, Mixins, Styles } = require('material-ui');
+let { Mixins, Styles } = require('material-ui');
 let { Spacing, Colors } = Styles;
 let { StyleResizable, StylePropable } = Mixins;
+require('../../../styles/opc.css');
 
 let Router = require('react-router');
 let RouteHandler = Router.RouteHandler;
@@ -17,35 +18,39 @@ var MainNav = React.createClass({
   },
 
   getStyles(){
-    let subNavWidth = Spacing.desktopKeylineIncrement * 3 + 'px';
+    let subNavWidth = 100 * 3 + 'px';
     let styles = {
       root: {
         //paddingTop: Spacing.desktopKeylineIncrement + 'px'
         paddingTop: '0px',
       },
       rootWhenMedium: {
-        position: 'relative'
+        position: 'relative',
+
       },
       secondaryNav: {
-        borderTop: 'solid 1px ' + Colors.grey300,
+        
         overflow: 'hidden',
-        textAlign: 'center',
+
       },
       content: {
         boxSizing: 'border-box',
-        padding: Spacing.desktopGutterMini + 'px',
+        padding: Spacing.desktopGutterMini + 'px', 
         //maxWidth: (Spacing.desktopKeylineIncrement * 14) + 'px',
       },
       secondaryNavWhenMedium: {
         borderTop: 'none',
-        position: 'absolute',
-        top: '4px',
+        position: 'fixed',
+        top: '0',
         width: subNavWidth,
+        overflowY:'scroll',
+        top:'80px',
+        height:'100%',
+        backgroundColor:'#323641',
+
       },
       contentWhenMedium: {
         marginLeft: subNavWidth,
-        borderLeft: 'solid 1px ' + Colors.grey300,
-        minHeight: '800px'
       }
     };
 
@@ -65,6 +70,44 @@ var MainNav = React.createClass({
       {
         id: 1001,
         name: '订单中心',
+        menus:[
+          {
+            id: 11,
+            name: '订单管理',
+            menus:[
+              {
+                id: 1,
+                name: '打印销售单',
+                handler: 'main'
+              },
+              {
+                id: 2,
+                name: '物流入库',
+                handler: 'main'
+              }
+            ]
+          },
+          {
+            id: 2,
+            name: '财务审核',
+            menus:[
+              {
+                id: 3,
+                name: '退货付款确认',
+                handler: 'main'
+              },
+              {
+                id: 4,
+                name:'销售明细统计',
+                handler: 'main'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 4001,
+        name: '订单中心2',
         menus:[
           {
             id: 11,

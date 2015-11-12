@@ -48,10 +48,6 @@ var FunctionNav = React.createClass({
 
     let cursorStyle = {
       cursor: 'pointer',
-      //paddingLeft:'80px',
-      //fontSize: '15px',
-      //fontFamily: 'Roboto',
-      //lineHeight: '35px',
       margin:'0',
       fontWeight:'bold',
     };
@@ -61,19 +57,33 @@ var FunctionNav = React.createClass({
       items.push(
         <div key={"function_nav_"+nv.id}>
           <LinkNav nav={nv} />
-        <hr />
       </div>
       );
     });
     return (
-      <div>
+      <div className="lstBox">
         <FlatButton
-          style={this.mergeAndPrefix(this.props.menuStyle,{width: '100%', backgroundColor:'#7A6766', fontSize: '20px'})}
+          style={this.mergeAndPrefix(this.props.menuStyle,{
+            width: '100%',
+            backgroundColor:'#323641', 
+            fontSize: '16px',
+            lineHeight:'50px',
+            color:'#ccc',
+            textAlign:'left',
+            borderBottomColor:'#454a59',
+            borderBottomWidth:'1px',
+            borderBottomStyle:'solid',
+            marginLeft:'20px',
+          })}
           secondary={true}
           label={this.props.nav.name}
           onTouchTap={this._toggle} />
-        <div
-          style={this.mergeAndPrefix(this.props.menuStyle, displayStyle)}>
+        <div style={this.mergeAndPrefix(this.props.menuStyle, displayStyle,
+          {
+            paddingTop:'10px',
+            paddingBottom:'10px',
+            marginLeft:'20px'
+          })}>
           {items}
         </div>
       </div>

@@ -48,9 +48,20 @@ var ModuleNav = React.createClass({
     };
 
     return (
-      <div style={{borderStyle: "ridge"}}>
+      <div style={{
+        borderBottomColor:'#323641',
+        borderBottomWidth:'1px',
+        borderBottomStyle:'solid',
+      }}>
         <FlatButton
-          style={{width: "100%", backgroundColor: '#c0c0c0', fontSize:'25px', textAlign: 'center'}}
+          style={{
+            width: "100%", 
+            backgroundColor:'#3b3f4c', 
+            fontSize:'18px',
+            lineHeight:'50px',
+            color:'#fff'
+
+            }}
           primary = {true}
           onTouchTap={this._toggle}
           label={this.props.nav.name} />

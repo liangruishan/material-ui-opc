@@ -31,9 +31,12 @@ var LinkNav = React.createClass({
   render(){
     let aStyle = {
       textDecoration:'none',
-      color: Colors.blueGrey500,
+      color:'#ccc',
       fontSize:'12px',
-      textAlign: 'center'
+      textAlign:'left',
+      height:'30px',
+      display:'block',
+      lineHeight:'30px'
     };
     return (
           <Link style={aStyle} to={this.props.nav.handler}>{this.props.nav.name}</Link>
