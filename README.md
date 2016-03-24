@@ -4,5 +4,5 @@
 # Installation [npm package](https://www.npmjs.org/package/material-ui).
 
 ```sh
-npm install react-swipeable-views
+npm install material-ui-opc
 ```
