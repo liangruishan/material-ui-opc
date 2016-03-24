@@ -6,7 +6,7 @@ let mergeAndPrefix = require('material-ui/lib/utils/styles');
 let { Mixins, Styles } = require('material-ui');
 let { Spacing, Colors } = Styles;
 let { StyleResizable, StylePropable } = Mixins;
-require('../../../styles/opc.css');
+//require('../../../styles/opc.css');
 
 let Router = require('react-router');
 let RouteHandler = Router.RouteHandler;
